@@ -1,0 +1,59 @@
+*{
+    padding: 0; margin: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+img{
+    cursor: pointer;
+}
+
+a{
+    color: #191919;
+   
+}
+
+html{
+    font-size: 62.5%;
+}
+
+$main-color : #FFFFFF;
+$main-color-ui:#FBFBFB;
+$second-color :#5F7A61;
+$third-color : #3C3C3C;
+$fourth-color: #1C6758;
+
+$white-color : #ffff;
+$balck-color : #191919;
+
+$hight-nav : 6rem;
+
+::selection{
+    color: $second-color;
+    background-color: #064420;
+}
+
+
+
+
+
+
+@mixin button ($width,$height){
+    border-radius: 16px;
+    width: $width;
+    height: $height;
+    
+}
+
+@mixin input-field($width,$height){
+    border-radius: 16px;
+    height: $height;
+    width: $width;
+}
+
+
+
+

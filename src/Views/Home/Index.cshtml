@@ -1,0 +1,430 @@
+﻿@model IEnumerable<Hotel>
+@{
+    Layout = "_customerLayout";
+}
+
+
+<div id="slider-home" class="slider-home">
+        <video src="~/assets/video/DaLat City.mp4" autoplay muted loop></video>
+        <div class="slider-home-content">
+            <h1 class="text-heading1">Make it's easy with Dalat <br> Booking</h1>
+            <p class="text-heading3">From June 8th to December 30, we gonna sale off 30% for who booking on our website.
+                There are many places
+                to choose with best price. Let's discover and enjoy the days with this city.</p>
+        </div>
+        <div class="slider-home-calendar-from">
+            <form action="">
+                <div class="from-calendar-item-home input-calendar-number-home">
+                    <i class="fa-regular fa-user"></i>
+                    <input type="number" min="0" max="100" step="1" class="input-calendar-home">
+                </div>
+
+                <div class="from-calendar-item-home input-calendar-date-home">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <input id="myID" class="input-calendar-home" placeholder="Check in">
+                </div>
+
+                <div class="from-calendar-item-home input-calendar-date-home">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <input id="myID" class="input-calendar-home" placeholder="Check out">
+                </div>
+
+                <a asp-controller="Home" asp-action="Details"><button class="btn-calendar-search text-main-color text-body2">Search place</button></a>
+            </form>
+        </div>
+    </div>
+    <!-------------------------- Silider-------------------------------->
+
+    <!-------------------------- Container-------------------------------->
+    
+
+    <div class="container-home">
+
+        <div class="row pb-3" style="">
+        @* @foreach (var hotel in Model)
+        {
+            <div class="col-lg-3 col-sm-6">
+                <div class="row p-2">
+                    <div class="col-12 p-1">
+                        <div class="card border-0 p-3 shadow  border-top border-5 rounded">
+                            <img src="@hotel.ToUrl()" class="card-img-top rounded"/>
+                            <div class="card-body pb-0">
+                                <div class="pl-1">
+                                    <p class="card-title h5 text-dark opacity-75 text-uppercase text-center">@hotel.Name</p>
+                                    <p class="card-title text-warning text-center">by <b>@hotel.Category.Name</b></p>
+                                </div>
+                            </div>
+                            <div>
+                                <a href="#" class="btn btn-primary bg-gradient border-0 form-control">
+                                    Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        </div> *@
+
+        @* @foreach(var hotel in Model){
+                    <div class="card-home">
+                        <div class="card-top-home">
+                            <img src="~/assets/img/home/most-hight/Rectangle 25-1.png" alt="" class="img-card-home">
+                        </div>
+                        <div class="card-bot-home">
+                            <h4 class="line-hight-text-card-home text-caption">Resort</h4>
+                            <h1 class="line-hight-text-card-home text-heading4">Binh An Village Da Lat </h1>
+                            <p class="line-hight-text-card-home text-common-sub">13 Khoi Nghia Bac Son, Ward 10, Da Lat
+                                City</p>
+                            <h3 class="line-hight-text-card-home text-body2">630.000đ / night</h3>
+                            <div class="rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                            </div>
+                        </div>
+                    </div>
+        } *@
+        <div class="container-cards-home">
+
+            <h1 class="text-heading2 heading-container-home text-secon-color">Most popular places</h1>
+            <div class="from-cards-home">
+
+                <a asp-controller="Home" asp-action="Details">
+                    <div class="card-home">
+                        <div class="card-top-home">
+                            <img src="~/assets/img/home/most-hight/Rectangle 25-1.png" alt="" class="img-card-home">
+                        </div>
+                        <div class="card-bot-home">
+                            <h4 class="line-hight-text-card-home text-caption">Resort</h4>
+                            <h1 class="line-hight-text-card-home text-heading4">Binh An Village Da Lat </h1>
+                            <p class="line-hight-text-card-home text-common-sub">13 Khoi Nghia Bac Son, Ward 10, Da Lat
+                                City</p>
+                            <h3 class="line-hight-text-card-home text-body2">630.000đ / night</h3>
+                            <div class="rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a asp-controller="Home" asp-action="Details">
+                    <div class="card-home">
+                        <div class="card-top-home">
+                            <img src="~/assets/img/home/most-hight/Rectangle 25-2.png" alt="" class="img-card-home">
+                        </div>
+                        <div class="card-bot-home">
+                            <h4 class="line-hight-text-card-home text-caption">Resort</h4>
+                            <h1 class="line-hight-text-card-home text-heading4">Binh An Village Da Lat </h1>
+                            <p class="line-hight-text-card-home text-common-sub">13 Khoi Nghia Bac Son, Ward 10, Da Lat
+                                City</p>
+                            <h3 class="line-hight-text-card-home text-body2">630.000đ / night</h3>
+                            <div class="rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a asp-controller="Home" asp-action="Details">
+                    <div class="card-home">
+                        <div class="card-top-home">
+                            <img src="~/assets/img/home/most-hight/Rectangle 25-3.png" alt="" class="img-card-home">
+                        </div>
+                        <div class="card-bot-home">
+                            <h4 class="line-hight-text-card-home text-caption">Resort</h4>
+                            <h1 class="line-hight-text-card-home text-heading4">Binh An Village Da Lat </h1>
+                            <p class="line-hight-text-card-home text-common-sub">13 Khoi Nghia Bac Son, Ward 10, Da Lat
+                                City</p>
+                            <h3 class="line-hight-text-card-home text-body2">630.000đ / night</h3>
+                            <div class="rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a asp-controller="Home" asp-action="Details">
+                    <div class="card-home">
+                        <div class="card-top-home">
+                            <img src="~/assets/img/home/most-hight/Rectangle 25-4.png" alt="" class="img-card-home">
+                        </div>
+                        <div class="card-bot-home">
+                            <h4 class="line-hight-text-card-home text-caption">Resort</h4>
+                            <h1 class="line-hight-text-card-home text-heading4">Binh An Village Da Lat </h1>
+                            <p class="line-hight-text-card-home text-common-sub">13 Khoi Nghia Bac Son, Ward 10, Da Lat
+                                City</p>
+                            <h3 class="line-hight-text-card-home text-body2">630.000đ / night</h3>
+                            <div class="rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a asp-controller="Home" asp-action="Details">
+                    <div class="card-home">
+                        <div class="card-top-home">
+                            <img src="~/assets/img/home/most-hight/Rectangle 25-5.png" alt="" class="img-card-home">
+                        </div>
+                        <div class="card-bot-home">
+                            <h4 class="line-hight-text-card-home text-caption">Resort</h4>
+                            <h1 class="line-hight-text-card-home text-heading4">Binh An Village Da Lat </h1>
+                            <p class="line-hight-text-card-home text-common-sub">13 Khoi Nghia Bac Son, Ward 10, Da Lat
+                                City</p>
+                            <h3 class="line-hight-text-card-home text-body2">630.000đ / night</h3>
+                            <div class="rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="container-cards-home">
+
+            <h1 class="text-heading2 heading-container-home text-secon-color">High Rating</h1>
+            <div class="from-cards-home">
+
+                <a asp-controller="Home" asp-action="Details">
+                    <div class="card-home">
+                        <div class="card-top-home">
+                            <img src="~/assets/img/booking/Rectangle 25-9.png" alt="" class="img-card-home">
+                        </div>
+                        <div class="card-bot-home">
+                            <h4 class="line-hight-text-card-home text-caption">Resort</h4>
+                            <h1 class="line-hight-text-card-home text-heading4">Binh An Village Da Lat </h1>
+                            <p class="line-hight-text-card-home text-common-sub">13 Khoi Nghia Bac Son, Ward 10, Da Lat
+                                City</p>
+                            <h3 class="line-hight-text-card-home text-body2">630.000đ / night</h3>
+                            <div class="rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a asp-controller="Home" asp-action="Details">
+                    <div class="card-home">
+                        <div class="card-top-home">
+                            <img src="~/assets/img/home/most-hight/Rectangle 25.png" alt="" class="img-card-home">
+                        </div>
+                        <div class="card-bot-home">
+                            <h4 class="line-hight-text-card-home text-caption">Resort</h4>
+                            <h1 class="line-hight-text-card-home text-heading4">Binh An Village Da Lat </h1>
+                            <p class="line-hight-text-card-home text-common-sub">13 Khoi Nghia Bac Son, Ward 10, Da Lat
+                                City</p>
+                            <h3 class="line-hight-text-card-home text-body2">630.000đ / night</h3>
+                            <div class="rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a asp-controller="Home" asp-action="Details">
+                    <div class="card-home">
+                        <div class="card-top-home">
+                            <img src="~/assets/img/home/most-hight/Rectangle 25-5.png" alt="" class="img-card-home">
+                        </div>
+                        <div class="card-bot-home">
+                            <h4 class="line-hight-text-card-home text-caption">Resort</h4>
+                            <h1 class="line-hight-text-card-home text-heading4">Binh An Village Da Lat </h1>
+                            <p class="line-hight-text-card-home text-common-sub">13 Khoi Nghia Bac Son, Ward 10, Da Lat
+                                City</p>
+                            <h3 class="line-hight-text-card-home text-body2">630.000đ / night</h3>
+                            <div class="rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a asp-controller="Home" asp-action="Details">
+                    <div class="card-home">
+                        <div class="card-top-home">
+                            <img src="~/assets/img/booking/Rectangle 25-11.png" alt="" class="img-card-home">
+                        </div>
+                        <div class="card-bot-home">
+                            <h4 class="line-hight-text-card-home text-caption">Resort</h4>
+                            <h1 class="line-hight-text-card-home text-heading4">Binh An Village Da Lat </h1>
+                            <p class="line-hight-text-card-home text-common-sub">13 Khoi Nghia Bac Son, Ward 10, Da Lat
+                                City</p>
+                            <h3 class="line-hight-text-card-home text-body2">630.000đ / night</h3>
+                            <div class="rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a asp-controller="Home" asp-action="Details">
+                    <div class="card-home">
+                        <div class="card-top-home">
+                            <img src="~/assets/img/booking/Rectangle 25-16.png" alt="" class="img-card-home">
+                        </div>
+                        <div class="card-bot-home">
+                            <h4 class="line-hight-text-card-home text-caption">Resort</h4>
+                            <h1 class="line-hight-text-card-home text-heading4">Binh An Village Da Lat </h1>
+                            <p class="line-hight-text-card-home text-common-sub">13 Khoi Nghia Bac Son, Ward 10, Da Lat
+                                City</p>
+                            <h3 class="line-hight-text-card-home text-body2">630.000đ / night</h3>
+                            <div class="rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                                <img src="~/assets/icon/StarFilled.png" alt="" class="img-rate-card-home">
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="container-service-home">
+            <h1 class="text-heading2 heading-container-home text-secon-color">We offer the best</h1>
+            <div class="from-service-home">
+                <div class="child-from-service-home">
+                    <div class="from-content-chil-service-home">
+                        <h1 class="text-heading4 number-from-content-home text-main-color">1</h1>
+                        <div class="from-content-chil-service-home-text">
+                            <h1 class="text-heading3">Easy</h1>
+                            <p class="text-common-sub">With this website you can booking easily, save your time
+                                and do not have to think when booking on this website. </p>
+                        </div>
+                    </div>
+
+                    <div class="from-content-chil-service-home">
+                        <h1 class="text-heading4 number-from-content-home text-main-color">2</h1>
+                        <div class="from-content-chil-service-home-text">
+                            <h1 class="text-heading3">Convenient</h1>
+                            <p class="text-common-sub">You want to order a ticket plane, instead go to another
+                                website you can order ticket plane here. </p>
+                        </div>
+                    </div>
+
+                    <div class="from-content-chil-service-home">
+                        <h1 class="text-heading4 number-from-content-home text-main-color">3</h1>
+                        <div class="from-content-chil-service-home-text">
+                            <h1 class="text-heading3">Security</h1>
+                            <p class="text-common-sub">Do you worry about the private information? Don’t worry
+                                about this, we are secure the information of yours very carefully. We keep private about
+                                our customers, our mechanism is do not leak to the other people.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="child-from-service-home">
+                    <img class="img-from-service-home" src="~/assets/img/home/weoffer/Rectangle 28.png" alt="">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container-feedback-home">
+            <h1 class="text-heading2 heading-container-home text-secon-color">What did our users say? </h1>
+            <div class="cards-feedback-home">
+                <div class="card-feedback-home">
+                    <div class="card-user-feedback-home">
+                        <div class="image-user-feedback-home">
+                            <img class="img-user-feedback-home" src="~/assets/img/home/feedback/Avatar-1.png" alt="">
+                        </div>
+                        <div class="info-user-feedback-home">
+                            <h1 class="text-heading4">Hoàng Anh</h1>
+                            <h2 class="text-common-sub">Ho Chi Minh City</h2>
+                        </div>
+                    </div>
+                    <p class="text-common-lab cmt-user-feedback-home">
+                        Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
+                        consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+                    </p>
+                </div>
+
+                <div class="card-feedback-home">
+                    <div class="card-user-feedback-home">
+                        <div class="image-user-feedback-home">
+                            <img class="img-user-feedback-home" src="~/assets/img/home/feedback/Avatar-2.png" alt="">
+                        </div>
+                        <div class="info-user-feedback-home">
+                            <h1 class="text-heading4">Hoàng Anh</h1>
+                            <h2 class="text-common-sub">Ho Chi Minh City</h2>
+                        </div>
+                    </div>
+                    <p class="text-common-lab cmt-user-feedback-home">
+                        Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
+                        consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+                    </p>
+                </div>
+
+                <div class="card-feedback-home">
+                    <div class="card-user-feedback-home">
+                        <div class="image-user-feedback-home">
+                            <img class="img-user-feedback-home" src="~/assets/img/home/feedback/Avatar-3.png" alt="">
+                        </div>
+                        <div class="info-user-feedback-home">
+                            <h1 class="text-heading4">Hoàng Anh</h1>
+                            <h2 class="text-common-sub">Ho Chi Minh City</h2>
+                        </div>
+                    </div>
+                    <p class="text-common-lab cmt-user-feedback-home">
+                        Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
+                        consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+                    </p>
+                </div>
+
+                <div class="card-feedback-home">
+                    <div class="card-user-feedback-home">
+                        <div class="image-user-feedback-home">
+                            <img class="img-user-feedback-home" src="~/assets/img/home/feedback/Avatar.png" alt="">
+                        </div>
+                        <div class="info-user-feedback-home">
+                            <h1 class="text-heading4">Hoàng Anh</h1>
+                            <h2 class="text-common-sub">Ho Chi Minh City</h2>
+                        </div>
+                    </div>
+                    <p class="text-common-lab cmt-user-feedback-home">
+                        Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
+                        consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+                    </p>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!-------------------------- Container-------------------------------->
+</script>
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }

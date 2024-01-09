@@ -1,0 +1,243 @@
+
+
+
+
+// ----------------- PC ---------------------
+@media (min-width : 1024px){
+
+
+// <!-------------------------- HEADER -------------------------------->
+    
+    html{
+        font-size: 62.5%;
+    }
+ 
+    .menu-bnt{
+        display: none;
+    }
+
+// <!-------------------------- FOOTER -------------------------------->
+    footer{
+        display: flex;
+        padding: 36px 112px 164px 112px;
+    
+    }
+
+// <!-------------------------- HOME -------------------------------->
+
+    .input-calendar-number-home{
+        width: 10.3rem;
+    }
+    .input-calendar-date-home{
+        width: 20.7rem;
+    }
+    .btn-calendar-search{
+        @include button (19.7rem,5.2rem);   
+        border: 0.4rem solid $balck-color;            
+    }
+
+    .from-cards-home{
+        .card-home{
+            // max-width: 38.4rem;
+        }
+    }
+
+    .container-feedback-home{
+        .cards-feedback-home{
+            flex-wrap: wrap;
+            .card-feedback-home{
+                
+                max-width: 36.8rem;
+            }
+        }
+    }
+
+    .container-about{
+        .card-leader-about{
+            width: 400px;
+        }
+    }
+
+    
+
+
+}
+
+
+
+// ----------------- IPAD ---------------------
+@media (min-width : 740px) and (max-width : 1023px)
+{
+
+// <!-------------------------- HEADER -------------------------------->
+    
+    html{
+        font-size: 55.5%;
+    }
+
+
+    header{
+        .logo{
+            display: none;
+        }
+        nav{
+
+            .nav-item{
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 99%;               
+                background-color: $second-color;
+                clip-path: polygon(0 0, 0 0, 100% 0);
+        
+                    &.active{
+                        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+                    }
+                
+                .nav-list{
+                    display: block;
+                    margin: 2rem;
+                }
+            }
+        
+            .nav-bnt{
+                display: inherit;
+    
+            }
+        }
+    }
+
+// <!-------------------------- FOOTER -------------------------------->
+    footer{
+        padding-top: 36px;
+        padding-bottom: 164px;
+        .left-footer{
+            margin-left: 4rem;
+            margin-bottom: 64px;
+        }
+        
+    }
+// <!-------------------------- HOME -------------------------------->
+
+    .slider-home-calendar-from{
+
+        .input-calendar-number-home{
+            width: 10.3rem;
+        }
+        .input-calendar-date-home{
+            width: 20.7rem;
+        }
+        .btn-calendar-search{
+            @include button (19.7rem,5.2rem);   
+                     
+        }
+    }
+
+    
+    .container-feedback-home{
+        .cards-feedback-home{
+            flex-wrap: wrap;
+            .card-feedback-home{
+                // width: auto;
+                
+            }
+        }
+    }
+
+    .container-about{
+        .cards-leader-about{
+            flex-wrap: wrap;
+        }
+        .card-leader-about{
+            width: 100%;
+        }
+    }
+
+    
+
+}
+
+
+
+
+// ----------------- MOBILE ---------------------
+@media (max-width : 739px){
+// <!-------------------------- HEADER -------------------------------->
+    
+    html{
+        font-size: 50%;
+    }
+
+    header {
+        .logo{
+            display: none;
+        }
+        nav{
+
+            .nav-item{
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 99%;
+                background-color: $second-color;
+                clip-path: polygon(0 0, 0 0, 100% 0);
+        
+                &.active{
+                    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+                }
+        
+                .nav-list{
+                    display: block;
+                    margin: 2rem;
+        
+                }
+            }
+            .nav-bnt{
+                display: inherit; 
+                
+                .bnt{
+                    margin:0 .5rem;
+                }
+               
+            }
+        }     
+    }
+
+// <!-------------------------- FOOTER -------------------------------->
+    footer{
+        padding-top: 36px;
+        padding-bottom: 164px;
+    }
+// <!-------------------------- HOME -------------------------------->
+    
+
+    .slider-home-calendar-from{
+
+        .input-calendar-number-home{
+            width: 100%;
+        }
+        .input-calendar-date-home{
+            width: 100%;
+        }
+        .btn-calendar-search{
+            @include button (100%,5.2rem);   
+                    
+        }
+        .from-calendar-item-home {
+            margin-bottom: 2rem;
+        }
+    }
+
+    .container-feedback-home{
+        .cards-feedback-home{
+            flex-wrap: wrap;
+            .card-feedback-home{
+                // width: auto;
+                
+            }
+        }
+    }
+
+
+}
+// ----------------- MOBILE ---------------------

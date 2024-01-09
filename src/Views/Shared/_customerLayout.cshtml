@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link Fontawesome -->
+    <link rel="stylesheet" href="~/assets/font/fontawesome-free-6.4.0-web/fontawesome-free-6.4.0-web/css/all.min.css">
+
+    <!-- Link Font Text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Link Slick Slider -->
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+    <!-- Link Css -->
+
+    <link rel="stylesheet" href="~/assets/css/app.css">
+
+    <!-- Link JS -->
+    <script src="~/assets/script.js" defer></script>
+
+    <!-- Link Custom FromBooking -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+
+
+    <title>Dalat Booking</title>
+</head>
+
+<body>
+    <!-------------------------- HEADER -------------------------------->
+
+    <header class="header">
+        <!-------------------------- Navigation-------------------------------->
+        <nav class="nav">
+
+
+            <i class="menu-bnt fas fa-bars"></i>
+
+            <a asp-controller="Home" asp-action="Index"><img src="~/assets/img/logo.png" alt=""></i></a>
+
+
+            @if (User.IsInRole(SD.Role_Admin)){
+                <div class="nav-item">
+                <a asp-controller="Home" asp-action="Index" class="text-common-sub nav-list">Home</a>
+                <a asp-controller="Room" asp-action="Index" class="text-common-sub nav-list">Management</a>
+            </div>
+                <div class="nav-icon">
+                                <img src="~/assets/icon/Bell.png" alt="">
+                                <img src="~/assets/icon/Global.png" alt="">
+                                <img src="~/assets/icon/Heart.png" alt="">
+                                <img src="~/assets/icon/User.png" alt="">
+                                <a class="nav-item">
+                                    <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                                        <button id="logout" type="submit" class="nav-link btn btn-link border-0 text-common-sub">Logout</button>
+                                    </form>
+                                </a>
+                </div>
+            }
+            else if (User.IsInRole(SD.Role_Customer)) {
+                <div class="nav-item">
+                <a asp-controller="Home" asp-action="Index" class="text-common-sub nav-list">Home</a>
+                <a asp-controller="Home" asp-action="Hotels" class="text-common-sub nav-list">Hotels</a>
+                
+                <a asp-controller="Home" asp-action="About" class="text-common-sub nav-list" class="text-common-sub nav-list">About</a>
+                <a asp-controller="Home" asp-action="Contact" class="text-common-sub nav-list" class="text-common-sub nav-list">Contact</a>
+            </div>
+                <div class="nav-icon">
+                                <img src="~/assets/icon/Bell.png" alt="">
+                                <img src="~/assets/icon/Global.png" alt="">
+                                <img src="~/assets/icon/Heart.png" alt="">
+                                <img src="~/assets/icon/User.png" alt="">
+
+                                <a class="nav-item">
+                                    <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                                        <button id="logout" type="submit" class="nav-link btn btn-link border-0 text-common-sub">Logout</button>
+                                    </form>
+                                </a>
+                </div>
+            }
+            else{
+                <div class="nav-item">
+                <a asp-controller="Home" asp-action="Index" class="text-common-sub nav-list">Home</a>
+                <a asp-controller="Home" asp-action="Hotels" class="text-common-sub nav-list">Hotels</a>
+                
+                <a asp-controller="Home" asp-action="About" class="text-common-sub nav-list" class="text-common-sub nav-list">About</a>
+                <a asp-controller="Home" asp-action="Contact" class="text-common-sub nav-list" class="text-common-sub nav-list">Contact</a>
+            </div>
+
+                <div class="nav-bnt">
+                    <a id="login" asp-area="Identity" asp-page="/Account/Login">
+                    <button class="bnt nav-bnt-signIn">Sign In</button></a>
+                    <a id="register" asp-area="Identity" asp-page="/Account/Register">
+                        <button class="bnt nav-bnt-signUp">Sign Up</button></a>
+                </div>
+            }
+            
+
+            
+        </nav>
+
+        
+        <!-------------------------- Navigation-------------------------------->
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <!-------------------------- Footer-------------------------------->
+    <footer class="footer">
+
+        <div class="left-footer">
+            <a href="index.html"><img class="img-logo-footer" src="~/assets/img/logo.png" alt=""></a>
+            <h1 class="text-heading4">Subscribe for newslatter</h1>
+            <div class="from-email-left-footer">
+                <input class="input-email-footer" type="email" placeholder="Enter the email">
+                <button class="text-common-lab btn-email-footer">Subscribe</button>
+            </div>
+            <h3 class="text-common-lab name-social-footer">Let’s us be social</h3>
+            <div class="icons-social-footer">
+                <img src="~/assets/icon/Instagram.png" alt="">
+                <img src="~/assets/icon/Facebook.png" alt="">
+                <img src="~/assets/icon/Twitter.png" alt="">
+                <img src="~/assets/icon/Pinterest.png" alt="">
+                <img src="~/assets/icon/Behance.png" alt="">
+            </div>
+        </div>
+        <div class="right-footer">
+            <div class="topic-footer">
+                <h1 class="text-heading4">Website</h1>
+                <div class="from-list-footer">
+                    <a href="index.html" class="text-body1 title-footer">Home</a>
+                    <a href="booking.html" class="text-body1 title-footer">Booking</a>
+
+                    <a href="about.html" class="text-body1 title-footer">About</a>
+                    <a href="contact.html" class="text-body1 title-footer">Contact</a>
+                </div>
+            </div>
+            <div class="topic-footer">
+                <h1 class="text-heading4">Q&A</h1>
+                <div class="from-list-footer">
+                    <a class="text-body1 title-footer" href="">How does it work?</a>
+                    <a class="text-body1 title-footer" href="">How can i work with this?</a>
+                    <a class="text-body1 title-footer" href="">How can i push my hotel on this website?</a>
+                    <a class="text-body1 title-footer" href="">Hotel quality inspection process</a>
+                </div>
+            </div>
+            <div class="topic-footer">
+                <h1 class="text-heading4">Infor</h1>
+                <div class="from-list-footer">
+                    <h3 class="text-body1 title-footer">Phone: 0988 891 910</h3>
+                    <h3 class="text-body1 title-footer">Address: 9 Hoa Binh , Ward 1, Da Lat City</h3>
+                    <h3 class="text-body1 title-footer">Website: www.dalatbooking.com.vn</h3>
+                    <h3 class="text-body1 title-footer">Email: dalabooking@gmail.com</h3>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-------------------------- Footer-------------------------------->
+</body>

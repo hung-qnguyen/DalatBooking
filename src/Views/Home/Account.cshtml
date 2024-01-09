@@ -1,0 +1,113 @@
+@{
+    Layout = "_customerLayout";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link Fontawesome -->
+    <link rel="stylesheet" href="~/assets/font/fontawesome-free-6.4.0-web/fontawesome-free-6.4.0-web/css/all.min.css">
+
+    <!-- Link Font Text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Link Slick Slider -->
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+    <!-- Link Css -->
+    <link rel="stylesheet" href="~/assets/css/app.css">
+
+    <!-- Link JS -->
+    <script src="~/assets/script.js" defer></script>
+
+    <!-- Link Custom FromBooking -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+
+
+    <title>Document</title>
+</head>
+
+<body>
+    <header class="header">
+        <!-------------------------- Navigation-------------------------------->
+        <nav class="nav">
+
+
+            <i class="menu-bnt fas fa-bars"></i>
+
+
+            <a href="" class="logo"><img src="~/assets/img/logo.png" alt=""></i></a>
+
+            <div class="nav-item">
+                <a href="index.html" class="text-common-sub nav-list">Home</a>
+                <a href="booking.html" class="text-common-sub nav-list">Booking</a>
+
+                <a href="about.html" class="text-common-sub nav-list">About</a>
+                <a href="contact.html" class="text-common-sub nav-list">Contact</a>
+            </div>
+
+            <div class="nav-icon">
+                <img src="~/assets/icon/Bell.png" alt="">
+                <img src="~/assets/icon/Global.png" alt="">
+                <img src="~/assets/icon/Heart.png" alt="">
+                <img src="~/assets/icon/User.png" alt="">
+            </div>
+        </nav>
+        <!-------------------------- Navigation-------------------------------->
+    </header>
+
+    <div class="account">
+        <div class="box-account">
+            <div class="from-account">
+                <div class="from-heading-account">
+                    <!-- <h1 class="text-heading3">TÀI KHOẢNG</h1> -->
+                    <a href="sign-in.html"><img src="~/assets/Icons/Sign Out.png" alt=""></a>
+
+                </div>
+                <div class="from-between-account">
+                    <img src="~/assets/img/img-account.png" class="img-account" alt="">
+                    <div class="from-input-account">
+
+                        <h3 class="text-caption text-thir-color">Name</h3>
+                        <input value="CTK44A" type="text" class="input-account margin-bot-16" 
+                            id="">
+                        <h3 class="text-caption text-thir-color">Country</h3>
+                        <input value="Viet Nam" type="text" class="input-account margin-bot-16" id="">
+                        <h3 class="text-caption text-thir-color">Email</h3>
+                        <input value="dlu@gmail.com" type="text" class="input-account margin-bot-16"  id="">
+                        <h3 class="text-caption text-thir-color">Phone number</h3>
+                        <input placeholder="enter your phone number " type="text" class="input-account margin-bot-16" name=""
+                             id="">
+
+                    </div>
+                </div>
+                <div class="from-end-account">
+                    <button class="btn-icon bnt-upload-account text-common-lab text-four-color"><img
+                            src="~/assets/icon/Upload.png" alt="">Upload your image</button>
+                    <div class="box-button-account">
+                        <button class="btn-icon bnt-edit-save-account btn-change-account"><img src="~/assets/icon/Change.png"
+                                alt="">Change</button>
+                        <button class="btn-icon bnt-edit-save-account btn-save-account"><img src="~/assets/icon/Saved.png"
+                                alt="">Save</button>
+                        <button class="btn-icon bnt-edit-save-account btn-log-out-account"><img src="~/assets/icon/Log out.png" alt=""><a href="sign-in.html">Log out</a></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
